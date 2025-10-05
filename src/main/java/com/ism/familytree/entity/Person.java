@@ -1,10 +1,11 @@
 package com.ism.familytree.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
-import lombok.Data;
 
 @Data
 @Entity
@@ -36,16 +37,17 @@ public class Person {
 
     private String gotra;
 
-    private String notes;
+    private String occupation;
+
+    private String deathPlace;
+
+    private String religion;
+
+    private String caste;
+
+    private String subCaste;
+
 
     @Column(name = "created_at", columnDefinition = "TIMESTAMPTZ")
     private OffsetDateTime createdAt = OffsetDateTime.now();
-
-    @Column(name = "updated_at", columnDefinition = "TIMESTAMPTZ")
-    private OffsetDateTime updatedAt = OffsetDateTime.now();
-
-    private Boolean deleted = false;
-
-    // Getters and Setters
 }
-
